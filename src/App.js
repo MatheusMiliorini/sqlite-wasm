@@ -1,7 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { db } from './sqlite';
 
 function App() {
+  const addData = () => {
+    if (db) {
+      db.exec('INSERT INTO test(name, age) VALUES (\'Matheus\', 10), (\'Lucas\', 20), (\'Leo\', 30);');
+      db.exec('SELECT * FROM test', {
+        callback: function (a) {
+          console.log(a);
+        }
+      });
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +28,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={addData}>Add Data</button>
       </header>
     </div>
   );

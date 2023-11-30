@@ -1,0 +1,96 @@
+{
+  "_from": "@sqlite.org/sqlite-wasm",
+  "_id": "@sqlite.org/sqlite-wasm@3.44.2-build1",
+  "_inBundle": false,
+  "_integrity": "sha512-w3Sla1EHLEzo73SmrRjHxPNsv27+KcCDLyZ4+OC6uyt9OHgdRGCdm4wF1zu583XATxS7L84663hrSMJzQMOH8A==",
+  "_location": "/@sqlite.org/sqlite-wasm",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@sqlite.org/sqlite-wasm",
+    "name": "@sqlite.org/sqlite-wasm",
+    "escapedName": "@sqlite.org%2fsqlite-wasm",
+    "scope": "@sqlite.org",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@sqlite.org/sqlite-wasm/-/sqlite-wasm-3.44.2-build1.tgz",
+  "_shasum": "9056c7f26f23034563a400ea8581271e7b2124cd",
+  "_spec": "@sqlite.org/sqlite-wasm",
+  "_where": "/Users/matheus/Desktop/sqlite-wasm-app",
+  "author": {
+    "name": "Thomas Steiner",
+    "url": "tomac@google.com"
+  },
+  "bin": {
+    "sqlite-wasm": "bin/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/sqlite/sqlite-wasm/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "SQLite Wasm conveniently wrapped as an ES Module.",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "decompress": "^4.2.1",
+    "http-server": "github:vapier/http-server",
+    "module-workers-polyfill": "^0.3.2",
+    "node-fetch": "^3.3.2",
+    "prettier": "^3.1.0",
+    "prettier-plugin-jsdoc": "^1.1.1",
+    "publint": "^0.2.5",
+    "shx": "^0.3.4"
+  },
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "main": "./index.mjs",
+      "browser": "./index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.d.ts",
+    "index.mjs",
+    "sqlite-wasm/"
+  ],
+  "homepage": "https://github.com/sqlite/sqlite-wasm#readme",
+  "keywords": [
+    "sqlite",
+    "sqlite3",
+    "sqlite-wasm",
+    "sqlite3-wasm",
+    "webassembly",
+    "wasm",
+    "esm",
+    "opfs",
+    "origin-private-file-system"
+  ],
+  "license": "Apache-2.0",
+  "main": "index.mjs",
+  "name": "@sqlite.org/sqlite-wasm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sqlite/sqlite-wasm.git"
+  },
+  "scripts": {
+    "build": "npm run clean && node bin/index.js",
+    "clean": "shx rm -rf sqlite-wasm",
+    "deploy": "npm run prepare && git add . && git commit -am 'New release' && git push && npm publish --access public",
+    "fix": "npx prettier . --write",
+    "prepare": "npm run build && npm run fix && npm run publint",
+    "publint": "npx publint",
+    "start": "npx http-server --coop"
+  },
+  "type": "module",
+  "types": "index.d.ts",
+  "version": "3.44.2-build1"
+}

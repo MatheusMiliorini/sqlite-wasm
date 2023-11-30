@@ -1,5 +1,7 @@
 import sqlite3InitModule from '@sqlite.org/sqlite-wasm';
 
+export let db;
+
 const log = (...args) => console.log(...args);
 const error = (...args) => console.error(...args);
 const start = function (sqlite3) {
@@ -12,8 +14,6 @@ const start = function (sqlite3) {
   db.exec('CREATE TABLE IF NOT EXISTS test(name, age);');
   return db;
 };
-
-export let db;
 
 log('Loading and initializing SQLite3 module...');
 
